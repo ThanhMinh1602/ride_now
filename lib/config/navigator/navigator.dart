@@ -1,6 +1,5 @@
 import 'package:car_booking/features/home_partners/presentation/screens/home_partners_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:page_transition/page_transition.dart';
 

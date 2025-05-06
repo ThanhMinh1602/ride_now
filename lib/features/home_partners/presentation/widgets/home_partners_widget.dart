@@ -1,8 +1,6 @@
 import 'package:car_booking/core/components/appbar/custom_appbar.dart';
-import 'package:car_booking/core/components/card/custom_card.dart';
 import 'package:car_booking/core/components/tabbar/custom_tab_bar.dart';
 import 'package:car_booking/core/constants/app_color.dart';
-import 'package:car_booking/core/constants/app_style.dart';
 import 'package:car_booking/features/home_partners/presentation/widgets/book_car_airport_ride_widget.dart';
 import 'package:car_booking/features/home_partners/presentation/widgets/book_car_for_tour_widget.dart';
 import 'package:car_booking/features/home_partners/presentation/widgets/book_car_now_widget.dart';
@@ -37,25 +35,28 @@ class _HomePartnersWidgetState extends State<HomePartnersWidget>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColor.surfaceGrey,
-      appBar: CustomAppbar(),
-      body: Column(
-        children: [
-          CustomTabBar(tabController: _tabController, tabTitle: tabTitle),
-          Flexible(
-            child: TabBarView(
-              controller: _tabController,
-              children: [
-                BookCarNowWidget(),
-                BookCarAirportRideWidget(),
-                BookCarForTourWidget(),
-              ],
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        backgroundColor: AppColor.surfaceGrey,
+        appBar: CustomAppbar(),
+        body: Column(
+          children: [
+            CustomTabBar(tabController: _tabController, tabTitle: tabTitle),
+            Flexible(
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  BookCarNowWidget(),
+                  BookCarAirportRideWidget(),
+                  BookCarForTourWidget(),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
+        bottomNavigationBar: Container(height: 70.0, color: AppColor.primary),
       ),
-      bottomNavigationBar: Container(height: 70.0, color: AppColor.primary),
     );
   }
 }

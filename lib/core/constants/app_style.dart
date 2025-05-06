@@ -77,7 +77,7 @@ class AppStyle {
   static const TextStyle buttonLarge18Medium = TextStyle(
     fontWeight: FontWeight.w500,
     fontSize: 18,
-    height: 1.3, // 130% line height
+    height: 1.3,
     letterSpacing: 0,
     textBaseline: TextBaseline.alphabetic,
     color: AppColor.textWhite,
