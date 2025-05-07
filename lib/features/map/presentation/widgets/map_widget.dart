@@ -91,8 +91,8 @@ class MapWidgetState extends State<MapWidget> {
                 mapType: MapType.normal,
                 initialCameraPosition: CameraPosition(
                   target: LatLng(
-                    state.locationEntities?.latitude ?? 16.0430185,
-                    state.locationEntities?.longitude ?? 108.1767579,
+                    state.currentLocation?.latitude ?? 16.0430185,
+                    state.currentLocation?.longitude ?? 108.1767579,
                   ),
                   zoom: 17.4746,
                 ),

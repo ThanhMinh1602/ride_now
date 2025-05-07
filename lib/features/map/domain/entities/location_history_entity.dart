@@ -1,3 +1,0 @@
-// class LocationHistoryModel {
-//   String
-// }
