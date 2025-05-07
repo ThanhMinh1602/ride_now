@@ -19,7 +19,15 @@ class AppStyle {
     fontSize: 20,
     height: 1.5,
     letterSpacing: 0,
-    color: AppColor.textWhite,
+    color: AppColor.white,
+  );
+  static TextStyle heading15SemiBoldPrimary = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 15,
+    height: 1.5,
+    letterSpacing: 0,
+    textBaseline: TextBaseline.alphabetic,
+    color: AppColor.textPrimary,
   );
 
   static const TextStyle k12RegularWhite = TextStyle(
@@ -27,7 +35,7 @@ class AppStyle {
     fontSize: 12,
     height: 1.5,
     letterSpacing: 0,
-    color: AppColor.textWhite,
+    color: AppColor.white,
   );
 
   static const TextStyle body12SemiBoldPrimary = TextStyle(
@@ -73,6 +81,14 @@ class AppStyle {
     textBaseline: TextBaseline.alphabetic,
     color: AppColor.textSecondary,
   );
+  static const TextStyle body12RegularPrimary = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 12,
+    height: 1.5,
+    letterSpacing: 0,
+    textBaseline: TextBaseline.alphabetic,
+    color: AppColor.textPrimary,
+  );
 
   static const TextStyle buttonLarge18Medium = TextStyle(
     fontWeight: FontWeight.w500,
@@ -80,6 +96,6 @@ class AppStyle {
     height: 1.3,
     letterSpacing: 0,
     textBaseline: TextBaseline.alphabetic,
-    color: AppColor.textWhite,
+    color: AppColor.white,
   );
 }

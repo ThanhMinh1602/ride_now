@@ -11,12 +11,14 @@ class CustomTextField extends StatelessWidget {
     this.controller,
     this.textInputAction,
     this.textInputType,
+    this.onTapSuffixIcon,
   });
   final String? suffixIcon;
   final String? hintText;
   final TextEditingController? controller;
   final TextInputAction? textInputAction;
   final TextInputType? textInputType;
+  final void Function()? onTapSuffixIcon;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -36,13 +38,16 @@ class CustomTextField extends StatelessWidget {
         ).copyWith(left: 16.0),
         suffixIcon:
             suffixIcon != null
-                ? Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 14.0,
-                  ).copyWith(right: 16.0),
-                  child: SvgPicture.asset(
-                    suffixIcon!,
-                    color: AppColor.neutral900,
+                ? GestureDetector(
+                  onTap: onTapSuffixIcon,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 14.0,
+                    ).copyWith(right: 16.0),
+                    child: SvgPicture.asset(
+                      suffixIcon!,
+                      color: AppColor.neutral900,
+                    ),
                   ),
                 )
                 : null,

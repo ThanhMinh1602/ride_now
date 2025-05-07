@@ -31,7 +31,7 @@ class CustomButton extends StatelessWidget {
         elevation: 0,
         textStyle: AppStyle.buttonLarge18Medium,
         backgroundColor: backgroundColor ?? AppColor.primary,
-        foregroundColor: foregroundColor ?? AppColor.textWhite,
+        foregroundColor: foregroundColor ?? AppColor.white,
         minimumSize: Size(width ?? double.infinity, height ?? 48.0),
         padding:
             padding ??
