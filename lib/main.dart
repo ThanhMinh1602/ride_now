@@ -1,4 +1,4 @@
-import 'package:car_booking/config/navigator/navigator.dart';
+import 'package:car_booking/core/navigator/navigator.dart';
 import 'package:car_booking/core/di/injection.dart';
 import 'package:flutter/material.dart';
 

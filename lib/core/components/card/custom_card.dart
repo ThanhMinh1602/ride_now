@@ -1,4 +1,5 @@
 import 'package:car_booking/core/constants/app_color.dart';
+import 'package:car_booking/core/constants/app_shadows.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
@@ -15,14 +16,9 @@ class CustomCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColor.surfaceWhite,
         borderRadius: BorderRadius.circular(12.0),
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, 0),
-            blurRadius: 16.0,
-            color: AppColor.black.withOpacity(0.1),
-          ),
-        ],
+        boxShadow: [AppShadows.medium],
       ),
+
       child: child,
     );
   }

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-import 'package:car_booking/config/navigator/navigator.dart';
+import 'package:car_booking/core/navigator/navigator.dart';
 import 'package:car_booking/features/map/presentation/screens/map_screen.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

@@ -21,6 +21,13 @@ class AppStyle {
     letterSpacing: 0,
     color: AppColor.white,
   );
+
+  static TextStyle heading16SemiBoldPrimary = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 16.0,
+    height: 1.5,
+    letterSpacing: 0.0,
+  );
   static TextStyle heading15SemiBoldPrimary = TextStyle(
     fontWeight: FontWeight.w600,
     fontSize: 15,

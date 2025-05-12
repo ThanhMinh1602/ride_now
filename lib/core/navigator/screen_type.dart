@@ -11,7 +11,7 @@ class ScreenTypeHelper {
     return switch (screenType) {
       ScreenTypeHome() => const HomePartnersScreen(),
       ScreenTypeMap(role: final role) => MapScreen(role: role),
-      _ => const SizedBox(),
+      _ => const Center(child: Text('Màn hình không được hỗ trợ')),
     };
   }
 }

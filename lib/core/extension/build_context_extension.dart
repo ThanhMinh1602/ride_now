@@ -1,4 +1,4 @@
-import 'package:car_booking/config/navigator/navigator.dart';
+import 'package:car_booking/core/navigator/navigator.dart';
 import 'package:flutter/widgets.dart';
 
 extension BuildContextExtension on BuildContext {

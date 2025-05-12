@@ -5,21 +5,19 @@ import 'package:flutter/material.dart';
 class InfoWindowsWidget extends StatelessWidget {
   final String title;
   final String snippet;
-  final double borderRadius; // Thêm tham số borderRadius
+  final double borderRadius;
 
   const InfoWindowsWidget({
     super.key,
     required this.title,
     required this.snippet,
-    this.borderRadius = 10.0, // Giá trị mặc định là 10.0
+    this.borderRadius = 10.0,
   });
 
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: SpeechBubblePainter(
-        borderRadius: borderRadius,
-      ), // Truyền borderRadius
+      painter: SpeechBubblePainter(borderRadius: borderRadius),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
         child: Column(
