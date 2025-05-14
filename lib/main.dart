@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'SFProDisplay'),
       navigatorObservers: [NavigatorObserver()],
-      home: ScreenTypeHelper.page(ScreenType.home()),
+      home: ScreenTypeHelper.page(ScreenType.welcome()),
     );
   }
 }

@@ -12,6 +12,7 @@ class CustomTextField extends StatelessWidget {
     this.textInputAction,
     this.textInputType,
     this.onTapSuffixIcon,
+    this.onTap,
   });
   final String? suffixIcon;
   final String? hintText;
@@ -19,11 +20,12 @@ class CustomTextField extends StatelessWidget {
   final TextInputAction? textInputAction;
   final TextInputType? textInputType;
   final void Function()? onTapSuffixIcon;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-
+      onTap: onTap,
       textInputAction: textInputAction ?? TextInputAction.next,
       keyboardType: textInputType ?? TextInputType.text,
       style: AppStyle.body15RegularSecondary.copyWith(

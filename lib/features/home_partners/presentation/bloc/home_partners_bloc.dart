@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:car_booking/core/enum/role.dart';
 import 'package:car_booking/core/navigator/navigator.dart';
 import 'package:car_booking/features/map/presentation/screens/map_screen.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -20,6 +21,6 @@ extension HomePartnersExtension on HomePartnersBloc {
     OpenMapEvent event,
     Emitter<HomePartnersState> emit,
   ) async {
-    navigator.push(screen: ScreenType.map(MapRole.passenger));
+    navigator.push(screen: ScreenType.map(Role.passenger));
   }
 }

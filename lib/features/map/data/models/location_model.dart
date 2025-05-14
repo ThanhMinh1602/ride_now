@@ -5,8 +5,15 @@ class LocationModel {
   final double? longitude;
   final String? title;
   final String? address;
+  final String? placeId;
 
-  LocationModel({this.latitude, this.longitude, this.title, this.address});
+  LocationModel({
+    this.latitude,
+    this.longitude,
+    this.title,
+    this.address,
+    this.placeId,
+  });
 
   factory LocationModel.fromJson(Map<String, dynamic> json) {
     return LocationModel(
@@ -14,6 +21,7 @@ class LocationModel {
       longitude: (json['longitude'] as num?)?.toDouble(),
       title: json['title'] as String?,
       address: json['address'] as String?,
+      placeId: json['placeId'] as String?,
     );
   }
   LocationEntities toEntity() {

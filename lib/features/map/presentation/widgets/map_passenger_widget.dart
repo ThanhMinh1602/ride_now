@@ -1,4 +1,5 @@
 import 'package:car_booking/core/components/button/custom_back_button.dart';
+import 'package:car_booking/core/components/button/custom_button.dart';
 import 'package:car_booking/core/components/customtextfield/custom_text_field.dart';
 import 'package:car_booking/core/constants/app_color.dart';
 import 'package:car_booking/core/constants/app_shadows.dart';
@@ -40,18 +41,36 @@ class _MapPassengerWidgetState extends State<MapPassengerWidget> {
               borderRadius: BorderRadius.vertical(top: Radius.circular(16.0)),
               boxShadow: [AppShadows.medium],
             ),
-            child: ListView.builder(
-              itemCount: state.locationHistories.length,
-              itemBuilder: (context, index) {
-                print(state.currentLocation?.address ?? '');
-                final data = state.locationHistories[index];
-                return GestureDetector(
-                  onTap: () {
-                    context.read<MapBloc>().add(SelectLocationEvent(data));
-                  },
-                  child: _buildLocationHistoryItem(data, state),
-                );
-              },
+            child: Column(
+              children: [
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: state.locationHistories.length,
+                    padding: EdgeInsets.only(bottom: 16.0),
+                    itemBuilder: (context, index) {
+                      print(state.currentLocation?.address ?? '');
+                      final data = state.locationHistories[index];
+                      return GestureDetector(
+                        onTap: () {
+                          context.read<MapBloc>().add(
+                            SelectLocationEvent(data),
+                          );
+                        },
+                        child: _buildLocationHistoryItem(data, state),
+                      );
+                    },
+                  ),
+                ),
+                CustomButton(
+                  text: 'Chọn điểm đến này',
+                  height: 56.0,
+                  icon: Assets.icons.locationIcOutline,
+                  onPressed:
+                      () => context.read<MapBloc>().add(
+                        SubmitLocationEvent(state.currentLocation!),
+                      ),
+                ),
+              ],
             ),
           );
         },
@@ -116,7 +135,24 @@ class _MapPassengerWidgetState extends State<MapPassengerWidget> {
         children: [
           CustomBackButton(),
           SizedBox(width: 16.0),
-          Expanded(child: CustomTextField(hintText: 'Nhập điểm tìm kiếm')),
+          Expanded(
+            child: CustomTextField(
+              hintText: 'Nhập điểm tìm kiếm',
+              onTap: () async {
+                // // Hiển thị giao diện tìm kiếm của flutter_google_places
+                // Prediction? prediction = await PlacesAutocomplete.show(
+                //   context: context,
+                //   apiKey: 'AIzaSyCBlap-jqb0uC3vp7eBrzJn8iiTKJpxtgM',
+                //   mode: Mode.overlay, // Hoặc Mode.fullscreen
+                //   language: 'vi', // Ngôn ngữ tiếng Việt
+                //   components: [
+                //     Component(Component.country, 'vn'),
+                //   ], // Giới hạn ở Việt Nam
+                // );
+                // print(prediction);
+              },
+            ),
+          ),
         ],
       ),
     );

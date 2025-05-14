@@ -25,7 +25,12 @@ class InfoWindowsWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(title, style: AppStyle.heading15SemiBoldPrimary),
+            Text(
+              title,
+              style: AppStyle.heading15SemiBoldPrimary,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
             Text(
               snippet,
               style: AppStyle.body12RegularPrimary,

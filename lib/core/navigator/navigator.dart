@@ -1,3 +1,6 @@
+import 'package:car_booking/core/enum/role.dart';
+import 'package:car_booking/features/auth/presentation/screens/register_option.dart';
+import 'package:car_booking/features/auth/presentation/screens/welcome_screen.dart';
 import 'package:car_booking/features/home_partners/presentation/screens/home_partners_screen.dart';
 import 'package:car_booking/features/map/presentation/screens/map_screen.dart';
 import 'package:flutter/material.dart';

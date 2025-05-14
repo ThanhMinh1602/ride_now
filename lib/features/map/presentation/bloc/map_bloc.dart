@@ -1,5 +1,7 @@
-import 'dart:ui';
 import 'package:bloc/bloc.dart';
+import 'package:car_booking/features/map/domain/usecase/get_location_suggestions_usecase.dart';
+import 'package:car_booking/features/map/domain/usecase/get_place_details_usecase.dart';
+import 'package:car_booking/features/map/domain/usecase/submit_location_usecase.dart';
 import 'package:car_booking/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -18,17 +20,25 @@ class MapBloc extends Bloc<MapEvent, MapState> {
   MapBloc({
     required this.getCurrentLocationUsecase,
     required this.getLocationHistoryUseCase,
+    required this.submitLocationUsecase,
+    required this.getLocationSuggestionsUsecase,
+    required this.getPlaceDetailsUsecase,
   }) : super(const MapState()) {
     _initializeMarkerIcon();
-    on<InitialEvent>(_onInit);
-    on<SelectLocationEvent>(_onSelectLocation);
+    on(_onInit);
+    on(_onSelectLocation);
+    on(_onSubmitLocation);
+    on(_onSearchLocation);
   }
 
   final GetLocationUsecase getCurrentLocationUsecase;
   final GetLocationHistoryUseCase getLocationHistoryUseCase;
+  final SubmitLocationUsecase submitLocationUsecase;
+  final GetLocationSuggestionsUsecase getLocationSuggestionsUsecase;
+  final GetPlaceDetailsUsecase getPlaceDetailsUsecase;
   late BitmapDescriptor markerIcon;
 
-  static const _defaultZoom = 17.4746;
+  static const _defaultZoom = 20.0;
 
   Future<void> _initializeMarkerIcon() async {
     markerIcon = await BitmapDescriptor.fromAssetImage(
@@ -161,4 +171,20 @@ class MapBloc extends Bloc<MapEvent, MapState> {
       ),
     );
   }
+
+  Future<void> _onSubmitLocation(
+    SubmitLocationEvent event,
+    Emitter<MapState> emit,
+  ) async {
+    try {
+      await submitLocationUsecase(event.location);
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  Future<void> _onSearchLocation(
+    SearchLocationEvent event,
+    Emitter<MapState> emit,
+  ) async {}
 }

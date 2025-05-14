@@ -3,4 +3,8 @@ import 'package:either_dart/either.dart';
 
 abstract class IMapRepo {
   Future<Either<String, List<LocationEntities>>> getHistoryLocation();
+  Future<Either<String, List<LocationEntities>>> getLocationSuggestions(
+    String input,
+  );
+  Future<Either<String, LocationEntities>> getPlaceDetails(String placeId);
 }

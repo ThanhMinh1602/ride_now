@@ -1,6 +1,8 @@
 import 'package:car_booking/core/constants/app_color.dart';
 import 'package:car_booking/core/constants/app_style.dart';
+import 'package:car_booking/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -13,6 +15,7 @@ class CustomButton extends StatelessWidget {
     this.width,
     this.height,
     this.borderRadius,
+    this.icon,
   });
   final void Function()? onPressed;
   final String text;
@@ -22,6 +25,7 @@ class CustomButton extends StatelessWidget {
   final double? height;
   final EdgeInsetsGeometry? padding;
   final BorderRadiusGeometry? borderRadius;
+  final String? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +44,13 @@ class CustomButton extends StatelessWidget {
           borderRadius: borderRadius ?? BorderRadius.circular(12.0),
         ),
       ),
-      child: Text(text),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (icon != null) ...[SvgPicture.asset(icon!), SizedBox(width: 12.0)],
+          Text(text),
+        ],
+      ),
     );
   }
 }

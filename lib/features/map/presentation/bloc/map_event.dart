@@ -6,4 +6,8 @@ class MapEvent with _$MapEvent {
 
   const factory MapEvent.selectLocation(LocationEntities location) =
       SelectLocationEvent;
+  const factory MapEvent.submitLocation(LocationEntities location) =
+      SubmitLocationEvent;
+
+  const factory MapEvent.searchLocation(String input) = SearchLocationEvent;
 }

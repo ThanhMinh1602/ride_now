@@ -15,7 +15,7 @@ class MapWidget extends StatefulWidget {
 class _MapWidgetState extends State<MapWidget> {
   static const _defaultLat = 16.0430185;
   static const _defaultLng = 108.1767579;
-  static const _defaultZoom = 17.4746;
+  static const _defaultZoom = 15.0;
   static const _markerSize = 56.0;
 
   final Completer<GoogleMapController> _controller =

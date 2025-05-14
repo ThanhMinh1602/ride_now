@@ -24,4 +24,29 @@ class MapRepo implements IMapRepo {
       return Left('Repository error: $e');
     }
   }
+
+  @override
+  Future<Either<String, List<LocationEntities>>> getLocationSuggestions(
+    String input,
+  ) async {
+    final result = await mapDataSources.getLocationSuggestions(input);
+
+    return result.fold(
+      (l) => Left(l),
+      (locationModels) =>
+          Right(locationModels.map((model) => model.toEntity()).toList()),
+    );
+  }
+
+  @override
+  Future<Either<String, LocationEntities>> getPlaceDetails(
+    String placeId,
+  ) async {
+    final result = await mapDataSources.getPlaceDetails(placeId);
+
+    return result.fold(
+      (l) => Left(l),
+      (locationModel) => Right(locationModel.toEntity()),
+    );
+  }
 }
