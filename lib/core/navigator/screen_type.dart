@@ -29,7 +29,7 @@ class ScreenTypeHelper {
       // case ScreenTypeTyperLogin(role: final role):
       //   return LoginScreen(role: role);
       default:
-        return const Center(child: Text('Màn hình không được hỗ trợ'));
+        return ErrorScreen();
     }
   }
 }

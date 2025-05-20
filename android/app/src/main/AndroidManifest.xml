@@ -8,6 +8,7 @@
         android:label="car_booking"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher" 
+        
         android:hardwareAccelerated="true"
         >
         <activity
@@ -15,6 +16,7 @@
             android:exported="true"
             android:launchMode="singleTop"
             android:taskAffinity=""
+            android:enableOnBackInvokedCallback="true"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"

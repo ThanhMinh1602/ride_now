@@ -13,7 +13,13 @@ import 'package:flutter/material.dart';
 // FontWeight.w900	900	Black
 class AppStyle {
   AppStyle._();
-
+  static TextStyle heading20BoldPrimary = TextStyle(
+    fontWeight: FontWeight.w700,
+    fontSize: 20,
+    height: 1.5,
+    letterSpacing: 0,
+    color: AppColor.primary,
+  );
   static TextStyle heading20BoldWhite = TextStyle(
     fontWeight: FontWeight.w700,
     fontSize: 20,
@@ -44,6 +50,14 @@ class AppStyle {
     letterSpacing: 0,
     textBaseline: TextBaseline.alphabetic,
     color: AppColor.textPrimary,
+  );
+  static TextStyle heading15SemiBoldAccentAlert = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 15,
+    height: 1.5,
+    letterSpacing: 0,
+    textBaseline: TextBaseline.alphabetic,
+    color: AppColor.accentAlert,
   );
 
   static const TextStyle k12RegularWhite = TextStyle(

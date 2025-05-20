@@ -11,7 +11,6 @@ class CustomBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 104,
       padding: EdgeInsets.symmetric(
         horizontal: 16.0,
         vertical: 8.0,

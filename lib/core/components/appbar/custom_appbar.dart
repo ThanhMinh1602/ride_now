@@ -20,7 +20,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: 16.0,
-      ).copyWith(bottom: 16.0, top: 63.0),
+      ).copyWith(bottom: 16.0, top: MediaQuery.of(context).padding.top + 22.0),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: AppColor.primaryGradient,
