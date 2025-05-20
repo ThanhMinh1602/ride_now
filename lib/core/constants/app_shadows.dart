@@ -8,4 +8,9 @@ class AppShadows {
     blurRadius: 16,
     offset: const Offset(0, 0),
   );
+  static BoxShadow light = BoxShadow(
+    color: AppColor.black.withOpacity(0.05),
+    blurRadius: 12,
+    offset: const Offset(0, 0),
+  );
 }

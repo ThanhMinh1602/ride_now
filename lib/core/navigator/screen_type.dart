@@ -6,7 +6,8 @@ class ScreenType with _$ScreenType {
   factory ScreenType.map(Role role) = ScreenTypeMap;
 
   factory ScreenType.welcome() = ScreenTypeWelcome;
-  factory ScreenType.registerOption() = ScreenTypeRegisterOption;
+  factory ScreenType.roleSelection(AuthScreenType authScreenType) =
+      ScreenTypeRoleSelection;
   factory ScreenType.register(Role role) = ScreenTyperRegister;
 
   factory ScreenType.login(Role role) = ScreenTyperLogin;
@@ -21,10 +22,10 @@ class ScreenTypeHelper {
         return MapScreen(role: role);
       case ScreenTypeWelcome():
         return WelcomeScreen();
-      case ScreenTypeRegisterOption():
-        return const RegisterOptionScreen();
-      // case ScreenTypeTyperRegister(role: final role):
-      //   return RegisterScreen(role: role);
+      case ScreenTypeRoleSelection(authScreenType: final authScreenType):
+        return RoleSelectionScreen(authScreenType: authScreenType);
+      case ScreenTyperRegister(role: final role):
+        return RegisterScreen(role: role);
       // case ScreenTypeTyperLogin(role: final role):
       //   return LoginScreen(role: role);
       default:

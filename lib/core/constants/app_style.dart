@@ -21,12 +21,21 @@ class AppStyle {
     letterSpacing: 0,
     color: AppColor.white,
   );
+  static const TextStyle heading18SemiBoldPrimary = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 18,
+    height: 1.5,
+    letterSpacing: 0,
+    textBaseline: TextBaseline.alphabetic,
+    color: AppColor.textPrimary,
+  );
 
   static TextStyle heading16SemiBoldPrimary = TextStyle(
     fontWeight: FontWeight.w600,
     fontSize: 16.0,
     height: 1.5,
     letterSpacing: 0.0,
+    color: AppColor.textPrimary,
   );
   static TextStyle heading15SemiBoldPrimary = TextStyle(
     fontWeight: FontWeight.w600,

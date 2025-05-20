@@ -36,7 +36,7 @@ class CustomButton extends StatelessWidget {
         textStyle: AppStyle.buttonLarge18Medium,
         backgroundColor: backgroundColor ?? AppColor.primary,
         foregroundColor: foregroundColor ?? AppColor.white,
-        minimumSize: Size(width ?? double.infinity, height ?? 48.0),
+        minimumSize: Size(width ?? double.infinity, height ?? 56.0),
         padding:
             padding ??
             const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),

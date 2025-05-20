@@ -1,11 +1,10 @@
 import 'package:car_booking/core/components/button/custom_button.dart';
 import 'package:car_booking/core/constants/app_color.dart';
-import 'package:car_booking/core/enum/role.dart';
+import 'package:car_booking/core/enum/auth_screen.dart';
 import 'package:car_booking/core/extension/build_context_extension.dart';
 import 'package:car_booking/core/navigator/navigator.dart';
 import 'package:car_booking/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -44,7 +43,12 @@ class WelcomeScreen extends StatelessWidget {
                     text: 'Đăng nhập',
                     backgroundColor: AppColor.neutral900,
                     foregroundColor: AppColor.white,
-                    onPressed: () {},
+                    onPressed:
+                        () => context.getNavigator().push(
+                          screen: ScreenType.roleSelection(
+                            AuthScreenType.login,
+                          ),
+                        ),
                   ),
                   CustomButton(
                     text: 'Đăng ký',
@@ -52,7 +56,9 @@ class WelcomeScreen extends StatelessWidget {
                     foregroundColor: AppColor.neutral900,
                     onPressed:
                         () => context.getNavigator().push(
-                          screen: ScreenType.registerOption(),
+                          screen: ScreenType.roleSelection(
+                            AuthScreenType.register,
+                          ),
                         ),
                   ),
                 ],

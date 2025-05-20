@@ -1,8 +1,10 @@
+import 'package:car_booking/core/enum/auth_screen.dart';
 import 'package:car_booking/core/enum/role.dart';
-import 'package:car_booking/features/auth/presentation/screens/register_option.dart';
-import 'package:car_booking/features/auth/presentation/screens/welcome_screen.dart';
+import 'package:car_booking/features/welcome/presentation/screens/welcome_screen.dart';
 import 'package:car_booking/features/home_partners/presentation/screens/home_partners_screen.dart';
 import 'package:car_booking/features/map/presentation/screens/map_screen.dart';
+import 'package:car_booking/features/role_selection/presentation/screens/role_selection_screen.dart';
+import 'package:car_booking/features/register/presentation/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:page_transition/page_transition.dart';
