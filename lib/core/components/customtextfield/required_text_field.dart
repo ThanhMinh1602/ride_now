@@ -16,6 +16,8 @@ class RequiredTextField extends StatelessWidget {
     this.textInputType,
     this.controller,
     this.isPassword = false,
+    this.validator,
+    this.textInputAction,
   });
 
   final String labelText;
@@ -27,6 +29,8 @@ class RequiredTextField extends StatelessWidget {
   final TextInputType? textInputType;
   final TextEditingController? controller;
   final bool isPassword;
+  final String? Function(String?)? validator;
+  final TextInputAction? textInputAction;
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +40,12 @@ class RequiredTextField extends StatelessWidget {
     );
 
     final textField = CustomTextField(
+      validator: validator,
       isPassword: isPassword,
       hintText: hintText,
       textInputType: textInputType,
       controller: controller,
+      textInputAction: textInputAction,
     );
 
     return isHorizontal

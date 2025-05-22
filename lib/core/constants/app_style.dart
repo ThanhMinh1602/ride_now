@@ -67,7 +67,14 @@ class AppStyle {
     letterSpacing: 0,
     color: AppColor.white,
   );
-
+  static const TextStyle body12RegularItalicAccentAlert = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.italic,
+    fontSize: 12.0,
+    height: 1.5,
+    letterSpacing: 0.0,
+    color: AppColor.accentAlert,
+  );
   static const TextStyle body12SemiBoldPrimary = TextStyle(
     fontWeight: FontWeight.w600,
     fontSize: 12,
@@ -111,6 +118,7 @@ class AppStyle {
     textBaseline: TextBaseline.alphabetic,
     color: AppColor.textSecondary,
   );
+
   static const TextStyle body12RegularPrimary = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 12,

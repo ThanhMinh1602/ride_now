@@ -15,6 +15,7 @@ class RequiredDropdown extends StatelessWidget {
     this.value,
     this.onChanged,
     this.hintText,
+    this.validator,
   });
 
   final String labelText;
@@ -25,6 +26,7 @@ class RequiredDropdown extends StatelessWidget {
   final String? value;
   final Function(String?)? onChanged;
   final String? hintText;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,12 @@ class RequiredDropdown extends StatelessWidget {
       labelText: labelText,
       isRequired: isRequired,
     );
-    final dropdown = CustomDropdown(items: items, onChanged: onChanged);
+    final dropdown = CustomDropdown(
+      items: items,
+      onChanged: onChanged,
+      hintText: hintText,
+      validator: validator,
+    );
     return isHorizontal
         ? Row(
           crossAxisAlignment: CrossAxisAlignment.center,

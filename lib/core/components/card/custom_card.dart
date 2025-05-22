@@ -12,7 +12,11 @@ class CustomCard extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(16.0),
-      margin: margin ?? EdgeInsets.all(16.0),
+      margin:
+          margin ??
+          EdgeInsets.all(
+            16.0,
+          ).copyWith(bottom: MediaQuery.of(context).viewInsets.bottom + 16.0),
       decoration: BoxDecoration(
         color: AppColor.surfaceWhite,
         borderRadius: BorderRadius.circular(12.0),

@@ -9,5 +9,9 @@ extension BuildContextExtension on BuildContext {
     return screenWidth * (designSize / baseWidth);
   }
 
+  void unfocus() {
+    FocusScope.of(this).unfocus();
+  }
+
   AppNavigator getNavigator() => AppNavigator.fromContext(this);
 }

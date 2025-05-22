@@ -1,35 +1,30 @@
 part of 'navigator.dart';
 
 @freezed
-class ScreenType with _$ScreenType {
-  factory ScreenType.home() = ScreenTypeHome;
-  factory ScreenType.map(Role role) = ScreenTypeMap;
+sealed class ScreenType with _$ScreenType {
+  const factory ScreenType.home() = Home;
+  const factory ScreenType.map(Role role) = GoogleMap;
+  const factory ScreenType.welcome() = Welcome;
+  const factory ScreenType.roleSelection(AuthScreenType authScreenType) =
+      RoleSelection;
+  const factory ScreenType.register(Role role) = Register;
+  const factory ScreenType.registerSuccess() = RegisterSuccess;
 
-  factory ScreenType.welcome() = ScreenTypeWelcome;
-  factory ScreenType.roleSelection(AuthScreenType authScreenType) =
-      ScreenTypeRoleSelection;
-  factory ScreenType.register(Role role) = ScreenTyperRegister;
-
-  factory ScreenType.login(Role role) = ScreenTyperLogin;
+  const factory ScreenType.login(Role role) = Login;
 }
 
 class ScreenTypeHelper {
   static Widget page(ScreenType screenType) {
-    switch (screenType) {
-      case ScreenTypeHome():
-        return const HomePartnersScreen();
-      case ScreenTypeMap(role: final role):
-        return MapScreen(role: role);
-      case ScreenTypeWelcome():
-        return WelcomeScreen();
-      case ScreenTypeRoleSelection(authScreenType: final authScreenType):
-        return RoleSelectionScreen(authScreenType: authScreenType);
-      case ScreenTyperRegister(role: final role):
-        return RegisterScreen(role: role);
-      // case ScreenTypeTyperLogin(role: final role):
-      //   return LoginScreen(role: role);
-      default:
-        return ErrorScreen();
-    }
+    return switch (screenType) {
+      Home() => HomePartnersScreen(),
+      GoogleMap(:final role) => MapScreen(role: role),
+      Welcome() => WelcomeScreen(),
+      RoleSelection(:final authScreenType) => RoleSelectionScreen(
+        authScreenType: authScreenType,
+      ),
+      Register(:final role) => RegisterScreen(role: role),
+      RegisterSuccess() => RegisterSuccessScreen(),
+      Login(:final role) => LoginScreen(role: role),
+    };
   }
 }

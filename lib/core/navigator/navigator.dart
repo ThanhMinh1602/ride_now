@@ -1,6 +1,8 @@
 import 'package:car_booking/core/components/error/error_screen.dart';
 import 'package:car_booking/core/enum/auth_screen.dart';
 import 'package:car_booking/core/enum/role.dart';
+import 'package:car_booking/features/login/presentation/screens/login_screen.dart';
+import 'package:car_booking/features/register/presentation/screens/register_success_screen.dart';
 import 'package:car_booking/features/welcome/presentation/screens/welcome_screen.dart';
 import 'package:car_booking/features/home_partners/presentation/screens/home_partners_screen.dart';
 import 'package:car_booking/features/map/presentation/screens/map_screen.dart';

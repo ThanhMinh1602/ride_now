@@ -1,3 +1,4 @@
+import 'package:car_booking/core/components/background/gradient_background.dart';
 import 'package:car_booking/core/components/button/custom_button.dart';
 import 'package:car_booking/core/constants/app_color.dart';
 import 'package:car_booking/core/enum/auth_screen.dart';
@@ -12,17 +13,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: context.screenWidth,
-        height: context.screenHeight,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            stops: [0.21, 1.0],
-            colors: AppColor.primaryGradient,
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-          ),
-        ),
+      body: GradientBackground(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
