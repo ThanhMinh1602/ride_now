@@ -119,6 +119,16 @@ class AppStyle {
     color: AppColor.textSecondary,
   );
 
+  static const TextStyle body15RegularSecondaryItalic = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.italic,
+    fontSize: 15,
+    height: 1.5,
+    letterSpacing: 0,
+    textBaseline: TextBaseline.alphabetic,
+    color: AppColor.textSecondary,
+  );
+
   static const TextStyle body12RegularPrimary = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 12,

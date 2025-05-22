@@ -6,9 +6,11 @@ import 'package:car_booking/core/components/customtextfield/required_text_field.
 import 'package:car_booking/core/components/dropdown/required_dropdown.dart';
 import 'package:car_booking/core/constants/app_color.dart';
 import 'package:car_booking/core/constants/app_style.dart';
+import 'package:car_booking/core/enum/role.dart';
 import 'package:car_booking/core/extension/build_context_extension.dart';
 import 'package:car_booking/core/navigator/navigator.dart';
 import 'package:car_booking/core/utils/validate_utils.dart';
+import 'package:car_booking/features/register/presentation/widgets/register_bottom_bar_widget.dart';
 import 'package:flutter/material.dart';
 
 class RegisterDriverWidget extends StatelessWidget {
@@ -115,35 +117,16 @@ class RegisterDriverWidget extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: CustomBottomBar(
-          child: Column(
-            spacing: 16.0,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              CustomButton(
-                text: 'Đăng ký',
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    context.getNavigator().push(
-                      screen: ScreenType.registerSuccess(),
-                    );
-                  }
-                },
+        bottomNavigationBar: RegisterBottomBar(
+          onPressed: () {
+            if (_formKey.currentState!.validate()) {
+              context.getNavigator().push(screen: ScreenType.registerSuccess());
+            }
+          },
+          onActionTap:
+              () => context.getNavigator().push(
+                screen: ScreenType.login(Role.driver),
               ),
-              RichText(
-                text: TextSpan(
-                  text: 'Bạn đã có tài khoản? ',
-                  style: AppStyle.body15RegularSecondary,
-                  children: [
-                    TextSpan(
-                      text: 'Đăng nhập ngay!',
-                      style: AppStyle.heading15SemiBoldAccentAlert,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
         ),
       ),
     );

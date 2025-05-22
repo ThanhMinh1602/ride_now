@@ -3,6 +3,7 @@ import 'package:car_booking/core/components/card/custom_card.dart';
 import 'package:car_booking/core/components/customtextfield/required_text_field.dart';
 import 'package:car_booking/core/constants/app_color.dart';
 import 'package:car_booking/core/constants/app_style.dart';
+import 'package:car_booking/core/enum/role.dart';
 import 'package:car_booking/core/extension/build_context_extension.dart';
 import 'package:car_booking/core/navigator/navigator.dart';
 import 'package:car_booking/core/utils/validate_utils.dart';
@@ -55,6 +56,10 @@ class RegisterPassengerWidget extends StatelessWidget {
               context.getNavigator().push(screen: ScreenType.registerSuccess());
             }
           },
+          onActionTap:
+              () => context.getNavigator().push(
+                screen: ScreenType.login(Role.passenger),
+              ),
         ),
       ),
     );
