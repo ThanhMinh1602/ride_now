@@ -9,8 +9,11 @@ sealed class ScreenType with _$ScreenType {
       RoleSelection;
   const factory ScreenType.register(Role role) = Register;
   const factory ScreenType.registerSuccess() = RegisterSuccess;
-
   const factory ScreenType.login(Role role) = Login;
+  const factory ScreenType.forgotPassword() = ForgotPassword;
+  const factory ScreenType.confirmOtp() = ConfirmOtp;
+  const factory ScreenType.changePasswordSuccess() = ChangePasswordSuccess;
+  const factory ScreenType.changePassword() = ChangePassword;
 }
 
 class ScreenTypeHelper {
@@ -25,6 +28,14 @@ class ScreenTypeHelper {
       Register(:final role) => RegisterScreen(role: role),
       RegisterSuccess() => RegisterSuccessScreen(),
       Login(:final role) => LoginScreen(role: role),
+
+      ForgotPassword() => ForgotPasswordScreen(),
+
+      ConfirmOtp() => throw ConfirmOtpScreen(),
+
+      ChangePasswordSuccess() => ChangePasswordSuccessScreen(),
+
+      ChangePassword() => throw ChangePasswordScreen(),
     };
   }
 }

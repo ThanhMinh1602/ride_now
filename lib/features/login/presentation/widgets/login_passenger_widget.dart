@@ -1,7 +1,6 @@
 import 'package:car_booking/core/components/appbar/custom_appbar.dart';
 import 'package:car_booking/core/components/card/custom_card.dart';
 import 'package:car_booking/core/components/customtextfield/required_text_field.dart';
-import 'package:car_booking/core/components/dropdown/required_dropdown.dart';
 import 'package:car_booking/core/constants/app_color.dart';
 import 'package:car_booking/core/constants/app_style.dart';
 import 'package:car_booking/core/enum/role.dart';
@@ -9,7 +8,6 @@ import 'package:car_booking/core/extension/build_context_extension.dart';
 import 'package:car_booking/core/navigator/navigator.dart';
 import 'package:car_booking/core/utils/validate_utils.dart';
 import 'package:car_booking/features/login/presentation/widgets/login_bottom_bar.dart';
-import 'package:car_booking/features/register/presentation/widgets/register_bottom_bar_widget.dart';
 import 'package:flutter/material.dart';
 
 class LoginPassengerWidget extends StatelessWidget {

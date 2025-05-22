@@ -1,6 +1,10 @@
 import 'package:car_booking/core/components/error/error_screen.dart';
 import 'package:car_booking/core/enum/auth_screen.dart';
 import 'package:car_booking/core/enum/role.dart';
+import 'package:car_booking/features/login/presentation/screens/change_password_screen.dart';
+import 'package:car_booking/features/login/presentation/screens/change_password_success_screen.dart';
+import 'package:car_booking/features/login/presentation/screens/confirm_otp_screen.dart';
+import 'package:car_booking/features/login/presentation/screens/forgot_password_screen.dart';
 import 'package:car_booking/features/login/presentation/screens/login_screen.dart';
 import 'package:car_booking/features/register/presentation/screens/register_success_screen.dart';
 import 'package:car_booking/features/welcome/presentation/screens/welcome_screen.dart';

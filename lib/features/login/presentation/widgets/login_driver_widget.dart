@@ -56,7 +56,10 @@ class LoginDriverWidget extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap:
+                          () => context.getNavigator().push(
+                            screen: ScreenType.forgotPassword(),
+                          ),
                       child: Text(
                         'Quên mật khẩu?',
                         textAlign: TextAlign.end,
